@@ -27,5 +27,9 @@ This is the demo web console for MLBaaSPlatfrom
 ##### 1: you need to login to the docker container to get the rpcuser and rpcpassword value from multichain.conf file under "/home/multichain-demomasternode-k8s/data/demoChain" and "/home/multichain-citi-slave3-k8s/data/demoChain" and "home/multichain-ubs-slave3-k8s/data/demoChain"
 #### 2: goto the web console and click on "Query multichain blockchain info" and click on the first "getBlockchainParams" and fill in below paras[don't forget to replace hostIp(node ip ,here i'm using linux vm) and rpcUserPwd with your actual values]
 ![avatar](img/get-blockchain-info.png)
+
+### Notes
+Currently the function for corda console is not developed
+
 ### Support or Contact
 > If you have question please contact me via menglong567@aliyun.com
