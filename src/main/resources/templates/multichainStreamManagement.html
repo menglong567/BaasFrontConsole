@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Welcome to BaaSFrontConsle</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.form.min.js"></script>
+    <script>//for getAllStreams
+    $(document).ready(function() {
+        $("#getAllStreams").ajaxForm(function(data){
+            // alert(data);
+            $("#getAllStreamsTextarea").val(data)
+        });
+    });
+    </script>
+
+    <script>//for create stream
+    $(document).ready(function() {
+        $("#createStream").ajaxForm(function(data){
+            // alert(data);
+            $("#createStreamTextarea").val(data)
+        });
+    });
+    </script>
+
+    <script>//for grantGlobalPermission
+    $(document).ready(function () {
+        $("#grantGlobalPermission").ajaxForm(function (data) {
+            // alert(data);
+            $("#grantGlobalPermissionTextarea").val(data)
+        });
+    });
+    </script>
+
+    <script>//for grantStreamPermission
+    $(document).ready(function () {
+        $("#grantStreamPermission").ajaxForm(function (data) {
+            // alert(data);
+            $("#grantStreamPermissionTextarea").val(data)
+        });
+    });
+    </script>
+
+
+    <script>//for publishToStream
+    $(document).ready(function () {
+        $("#publishToStream").ajaxForm(function (data) {
+            // alert(data);
+            $("#publishToStreamTextarea").val(data)
+        });
+    });
+    </script>
+
+    <script>//for getStreamItems
+    $(document).ready(function () {
+        $("#getStreamItems").ajaxForm(function (data) {
+            // alert(data);
+            $("#getStreamItemsTextarea").val(data)
+        });
+    });
+    </script>
+
+    <script>//for subscribeStream
+    $(document).ready(function () {
+        $("#subscribeStream").ajaxForm(function (data) {
+            // alert(data);
+            $("#subscribeStreamTextarea").val(data)
+        });
+    });
+    </script>
+
+    <style>
+        table,table td,table th{border:1px solid #ff0000;border-collapse:collapse;}
+    </style>
+</head>
+<body>
+<div class="panel">
+    <h1 class="welcome">Welcome to Multichain Console</h1>
+    <div class="description">Here we provide you simple ways to create and manage your own Blockchain network for Multichain</div>
+    <div th:align="right"></div>
+    <h2 th:align="center">Multichain stream administration</h2>
+    <table style="table-layout:fixed;word-break:break-all" th:align="center">
+        <tbody>
+        <tr>
+            <td th:align="right" valign="bottom">
+                <form method="post" action="http://localhost:7071/multichain/getAllStreamsForm" th:border="1" id="getAllStreams">
+                    <label>hostIp：</label>
+                    <input style="vertical-align: middle; text-align:center" id="hostIp" name="hostIp"/><br/>
+                    <label>rpcPort：</label>
+                    <input style="vertical-align: middle; text-align:center" id="rpcPort" name="rpcPort"/><br/>
+                    <label>rpcUser：</label>
+                    <input style="vertical-align: middle; text-align:center" id="rpcUser" name="rpcUser"/><br/>
+                    <label>rpcUserPwd：</label>
+                    <input style="vertical-align: middle; text-align:center" id="rpcUserPwd" name="rpcUserPwd"/><br/>
+                    <label>streamIdentifiers：</label>
+                    <input style="vertical-align: middle; text-align:center" id="streamIdentifiers" name="streamIdentifiers"/><br/>
+                    <label>verbose：</label>
+                    <input style="vertical-align: middle; text-align:center" id="verbose" name="verbose" placeholder="true/false"/><br/>
+                    <input type="submit" value="getAllStreams" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                </form>
+                <div>
+                    <textarea id="getAllStreamsTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                </div>
+            </td>
+            <td th:align="right" valign="bottom">
+                <form method="post" action="http://localhost:7071/multichain/createStreamForm" th:border="1" id="createStream">
+                    <label>hostIp：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="hostIp"/><br/>
+                    <label>rpcPort：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="rpcPort"/><br/>
+                    <label>rpcUser：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="rpcUser"/><br/>
+                    <label>rpcUserPwd：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="rpcUserPwd"/><br/>
+                    <label>streamName：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="streamName"/><br/>
+                    <input type="submit" value="createStream" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                </form>
+                <div>
+                    <textarea id="createStreamTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                </div>
+            </td>
+            <td th:align="right" valign="bottom">
+                <form method="post" action="http://localhost:7071/multichain/grantGlobalPermissionForm" th:border="1" id="grantGlobalPermission">
+                    <label>hostIp：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="hostIp"/><br/>
+                    <label>rpcPort：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="rpcPort"/><br/>
+                    <label>rpcUser：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="rpcUser"/><br/>
+                    <label>rpcUserPwd：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="rpcUserPwd"/><br/>
+                    <label>walletAddress：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="walletAddress"/><br/>
+                    <label>permissionIdentifier：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="permissionIdentifier" placeholder="send:issue:activate:admin:connect:receive:create:mine"/><br/>
+                    <input type="submit" value="grantGlobalPermission" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                </form>
+                <div >
+                    <textarea id="grantGlobalPermissionTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td th:align="right" valign="bottom">
+                <form method="post" action="http://localhost:7071/multichain/grantStreamPermissionForm" th:border="1" id="grantStreamPermission">
+                    <label>hostIp：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="hostIp"/><br/>
+                    <label>rpcPort：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="rpcPort"/><br/>
+                    <label>rpcUser：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="rpcUser"/><br/>
+                    <label>rpcUserPwd：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="rpcUserPwd"/><br/>
+                    <label>walletAddress：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="walletAddress"/><br/>
+                    <label>permissionIdentifier：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="permissionIdentifier" placeholder="send:issue:activate:admin:connect:receive:create:mine"/><br/>
+                    <input type="submit" value="grantStreamPermission" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                </form>
+                <div >
+                    <textarea id="grantStreamPermissionTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                </div>
+            </td>
+            <td th:align="right" valign="bottom">
+                <form method="post" action="http://localhost:7071/multichain/publishToStreamForm" th:border="1" id="publishToStream">
+                    <label>hostIp：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="hostIp"/><br/>
+                    <label>rpcPort：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="rpcPort"/><br/>
+                    <label>rpcUser：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="rpcUser"/><br/>
+                    <label>rpcUserPwd：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="rpcUserPwd"/><br/>
+                    <label>streamidentifier：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="streamidentifier"/><br/>
+                    <label>key：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="key"/><br/>
+                    <label>value：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="value"/><br/>
+                    <input type="submit" value="publishToStream" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                </form>
+                <div >
+                    <textarea id="publishToStreamTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                </div>
+            </td>
+            <td th:align="right" valign="bottom">
+                <form method="post" action="http://localhost:7071/multichain/getStreamItemsForm" th:border="1" id="getStreamItems">
+                    <label>hostIp：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="hostIp"/><br/>
+                    <label>rpcPort：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="rpcPort"/><br/>
+                    <label>rpcUser：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="rpcUser"/><br/>
+                    <label>rpcUserPwd：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="rpcUserPwd"/><br/>
+                    <label>streamidentifier：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="streamidentifier"/><br/>
+                    <label>verbose：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="verbose" placeholder="true/false"/><br/>
+                    <label>limit：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="limit"/><br/>
+                    <input type="submit" value="getStreamItems" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                </form>
+                <div >
+                    <textarea id="getStreamItemsTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td th:align="right" valign="bottom">
+                <form method="post" action="http://localhost:7071/multichain/subscribeStreamForm" th:border="1" id="subscribeStream">
+                    <label>hostIp：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="hostIp"/><br/>
+                    <label>rpcPort：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="rpcPort"/><br/>
+                    <label>rpcUser：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="rpcUser"/><br/>
+                    <label>rpcUserPwd：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="rpcUserPwd"/><br/>
+                    <label>streamidentifier：</label>
+                    <input style="vertical-align: middle; text-align:center"  name="streamidentifier"/><br/>
+                    <input type="submit" value="subscribeStream" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                </form>
+                <div >
+                    <textarea id="subscribeStreamTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                </div>
+            </td>
+            <td th:align="right" valign="bottom">
+                111111111
+            </td>
+            <td th:align="right" valign="bottom">
+                222222222
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Welcome to BaaSFrontConsle</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.form.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#createSlaveForm").ajaxForm(function(data){
+                // alert(data);
+                $("#createSlave").val(data)
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="panel">
+    <h1 class="welcome">Welcome to Multichain Console</h1>
+    <div class="description">Here we provide you simple ways to create and manage your own Blockchain network for Multichain</div>
+    <div th:align="right">
+        <h2 th:align="center">Create multichain slave node</h2>
+        <table style="table-layout:fixed;word-break:break-all" th:align="center">
+            <tbody>
+            <tr>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/slave/create/json" th:border="1" id="createSlaveForm">
+                        <label for="slaveNodeName">slaveNodeName：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" id="slaveNodeName" name="slaveNodeName"/><br/>
+
+                        <label for="slaveNodeNamespace">slaveNodeNamespace：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" id="slaveNodeNamespace" name="slaveNodeNamespace"/><br/>
+
+                        <label for="chainName">chainName：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" id="chainName" name="chainName"/><br/>
+
+                        <label for="masterNodeName">masterNodeName：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" id="masterNodeName" name="masterNodeName"/><br/>
+
+                        <label for="masterNamespace">masterNamespace：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" id="masterNamespace" name="masterNamespace"/><br/>
+
+                        <label for="memoryRequest">memoryRequest：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" id="memoryRequest" name="memoryRequest"/><br/>
+
+                        <label for="cpuRequest">cpuRequest：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" id="cpuRequest" name="cpuRequest"/><br/>
+
+                        <label for="memoryLimit">memoryLimit：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" id="memoryLimit" name="memoryLimit"/><br/>
+
+                        <label for="cpuLimit">cpuLimit：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" id="cpuLimit" name="cpuLimit"/><br/>
+
+                        <label for="nodeportnetworkPort">nodeportnetworkPort：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" id="nodeportnetworkPort" name="nodeportnetworkPort" placeholder="<30000~32767>"/><br/>
+
+                        <label for="nodeportrpcPort">nodeportrpcPort：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" id="nodeportrpcPort" name="nodeportrpcPort" placeholder="<30000~32767>"/><br/>
+
+                        <input type="submit" value="create slave node" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div>
+                        <textarea id="createSlave" rows="5" cols="60" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

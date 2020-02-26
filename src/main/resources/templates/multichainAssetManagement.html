@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Welcome to BaaSFrontConsle</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.form.min.js"></script>
+    <script>//for getBlockChainNodeWalletAddressesPermission
+        $(document).ready(function() {
+            $("#getBlockChainNodeWalletAddressesPermission").ajaxForm(function(data){
+                // alert(data);
+                $("#getBlockChainNodeWalletAddressesPermissionTextarea").val(data)
+            });
+        });
+    </script>
+
+    <script>//for grantGlobalPermission
+    $(document).ready(function () {
+        $("#grantGlobalPermission").ajaxForm(function (data) {
+            // alert(data);
+            $("#grantGlobalPermissionTextarea").val(data)
+        });
+    });
+    </script>
+
+    <script>//for listBalanceAssets
+    $(document).ready(function () {
+        $("#listBalanceAssets").ajaxForm(function (data) {
+            // alert(data);
+            $("#listBalanceAssetsTextarea").val(data)
+        });
+    });
+    </script>
+
+    <script>//for createAsset
+    $(document).ready(function () {
+        $("#createAsset").ajaxForm(function (data) {
+            // alert(data);
+            $("#createAssetTextarea").val(data)
+        });
+    });
+    </script>
+
+    <script>//for getTotalBalances
+    $(document).ready(function () {
+        $("#getTotalBalances").ajaxForm(function (data) {
+            // alert(data);
+            $("#getTotalBalancesTextarea").val(data)
+        });
+    });
+    </script>
+
+    <script>//for sendAssetToWalletAddress
+    $(document).ready(function () {
+        $("#sendAssetToWalletAddress").ajaxForm(function (data) {
+            // alert(data);
+            $("#sendAssetToWalletAddressTextarea").val(data)
+        });
+    });
+    </script>
+
+    <script>//for getWalletAddressBalances
+    $(document).ready(function () {
+        $("#getWalletAddressBalances").ajaxForm(function (data) {
+            // alert(data);
+            $("#getWalletAddressBalancesTextarea").val(data)
+        });
+    });
+    </script>
+
+    <script>//for getAssetInfo
+    $(document).ready(function () {
+        $("#getAssetInfo").ajaxForm(function (data) {
+            // alert(data);
+            $("#getAssetInfoTextarea").val(data)
+        });
+    });
+    </script>
+
+    <script>//for subscribeAsset
+    $(document).ready(function () {
+        $("#subscribeAsset").ajaxForm(function (data) {
+            // alert(data);
+            $("#subscribeAssetTextarea").val(data)
+        });
+    });
+    </script>
+
+    <style>
+        table,table td,table th{border:1px solid #ff0000;border-collapse:collapse;}
+    </style>
+</head>
+<body>
+<div class="panel">
+    <h1 class="welcome">Welcome to Multichain Console</h1>
+    <div class="description">Here we provide you simple ways to create and manage your own Blockchain network for Multichain</div>
+    <div th:align="right">
+        <h2 th:align="center">Multichain asset administration</h2>
+        <table style="table-layout:fixed;word-break:break-all" th:align="center">
+            <tbody>
+            <tr>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/getBlockChainNodeWalletAddressesPermissionsForm" th:border="1" id="getBlockChainNodeWalletAddressesPermission">
+                        <label>hostIp：</label>
+                        <input style="vertical-align: middle; text-align:center" id="hostIp" name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input style="vertical-align: middle; text-align:center" id="rpcPort" name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input style="vertical-align: middle; text-align:center" id="rpcUser" name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input style="vertical-align: middle; text-align:center" id="rpcUserPwd" name="rpcUserPwd"/><br/>
+                        <label>wallletAddresses：</label>
+                        <input style="vertical-align: middle; text-align:center" id="wallletAddresses" name="wallletAddresses"/><br/>
+                        <label>permissionIdentifier：</label>
+                        <input style="vertical-align: middle; text-align:center" id="permissionIdentifier" name="permissionIdentifier"/><br/>
+                        <label>verbose：</label>
+                        <input style="vertical-align: middle; text-align:center" id="verbose" name="verbose"/><br/>
+                        <input type="submit" value="getAddressesPermission" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div>
+                        <textarea id="getBlockChainNodeWalletAddressesPermissionTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/listBalanceAssetsForm" th:border="1" id="listBalanceAssets">
+                        <label>hostIp：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcUserPwd"/><br/>
+                        <label>assets：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="assets" placeholder="asset name, ref or issuance txid or * for all assets"/><br/>
+                        <label>verbose：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="verbose"/><br/>
+                        <input type="submit" value="listBalanceAssets" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div >
+                        <textarea id="listBalanceAssetsTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/createAssetForm" th:border="1" id="createAsset">
+                        <label>hostIp：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcUserPwd"/><br/>
+                        <label>wallletAddress：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="wallletAddress"/><br/>
+                        <label>assetName：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="assetName"/><br/>
+                        <label>quantity：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="quantity"/><br/>
+                        <label>units：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="units"/><br/>
+                        <label>open：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="open"/><br/>
+                        <label>restrict：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="restrict"/><br/>
+                        <input type="submit" value="createAsset" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div >
+                        <textarea id="createAssetTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/grantGlobalPermissionForm" th:border="1" id="grantGlobalPermission">
+                        <label>hostIp：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcUserPwd"/><br/>
+                        <label>walletAddress：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="walletAddress"/><br/>
+                        <label>permissionIdentifier：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="permissionIdentifier" placeholder="send:issue:activate:admin:connect:receive:create:mine"/><br/>
+                        <input type="submit" value="grantGlobalPermission" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div >
+                        <textarea id="grantGlobalPermissionTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/getTotalBalancesForm" th:border="1" id="getTotalBalances">
+                        <label>hostIp：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcUserPwd"/><br/>
+                        <input type="submit" value="getTotalBalances" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div >
+                        <textarea id="getTotalBalancesTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/sendAssetToWalletAddressForm" th:border="1" id="sendAssetToWalletAddress">
+                        <label>hostIp：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcUserPwd"/><br/>
+                        <label>walletAddress：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="walletAddress"/><br/>
+                        <label>assetIdentifier：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="assetIdentifier"/><br/>
+                        <label>amount：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="amount"/><br/>
+                        <input type="submit" value="sendAssetToWalletAddress" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div >
+                        <textarea id="sendAssetToWalletAddressTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/getWalletAddressBalancesForm" th:border="1" id="getWalletAddressBalances">
+                        <label>hostIp：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcUserPwd"/><br/>
+                        <label>walletAddress：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="walletAddress"/><br/>
+                        <input type="submit" value="getWalletAddressBalances" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div >
+                        <textarea id="getWalletAddressBalancesTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/getAssetInfoForm" th:border="1" id="getAssetInfo">
+                        <label>hostIp：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcUserPwd"/><br/>
+                        <label>assetIdentifier：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="assetIdentifier"/><br/>
+                        <label>verbose：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="verbose"/><br/>
+                        <input type="submit" value="getAssetInfo" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div >
+                        <textarea id="getAssetInfoTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/subscribeAssetForm" th:border="1" id="subscribeAsset">
+                        <label>hostIp：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="rpcUserPwd"/><br/>
+                        <label>assetIdentifier：</label>
+                        <input style="vertical-align: middle; text-align:center"  name="assetIdentifier"/><br/>
+                        <input type="submit" value="subscribeAsset" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div >
+                        <textarea id="subscribeAssetTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+</body>
+</html>

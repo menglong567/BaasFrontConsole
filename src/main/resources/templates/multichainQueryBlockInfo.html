@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Welcome to BaaSFrontConsle</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.form.min.js"></script>
+    <script>
+        $(document).ready(function() {//for blockInfo
+            $("#queryBlockInfo").ajaxForm(function(data){
+                // alert(data);
+                $("#blockInfo").val(data)
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $("#getBlockCount").ajaxForm(function(data){
+                // alert(data);
+                $("#getBlockCountTextarea").val(data)
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $("#getLastBlockInfo").ajaxForm(function(data){
+                // alert(data);
+                $("#getLastBlockInfoTextarea").val(data)
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $("#listBlocksForm").ajaxForm(function(data){
+                // alert(data);
+                $("#listBlocksTextarea").val(data)
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $("#getBlockHashForm").ajaxForm(function(data){
+                // alert(data);
+                $("#getBlockHashTextarea").val(data)
+            });
+        });
+    </script>
+
+    <style>
+        table,table td,table th{border:1px solid #ff0000;border-collapse:collapse;}
+    </style>
+</head>
+<body>
+<div class="panel">
+    <h1 class="welcome">Welcome to Multichain Console
+    </h1>
+    <div class="description">Here we provide you simple ways to create and manage your own Blockchain network for Multichain</div>
+    <div th:align="right">
+        <h2 th:align="center">Query multichain block info</h2>
+        <table style="table-layout:fixed;word-break:break-all" th:align="center">
+            <tbody>
+            <tr>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/getBlockInfoForm" th:border="1" id="queryBlockInfo">
+                        <label>hostIp：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center"  name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center"  name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center"  name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center"  name="rpcUserPwd"/><br/>
+                        <label>blockHeight：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center"  name="blockHeight" placeholder="height e.g. 10 / 20"/><br/>
+                        <input type="submit" value="getBlockInfo" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div>
+                        <textarea id="blockInfo" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/getBlockCountForm" th:border="1" id="getBlockCount">
+                        <label>hostIp：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUserPwd"/><br/>
+                        <input type="submit" value="getBlockCount" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div>
+                        <textarea id="getBlockCountTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/getLastBlockInfoForm" th:border="1" id="getLastBlockInfo">
+                        <label>hostIp：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUserPwd"/><br/>
+                        <input type="submit" value="getLastBlockInfo" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div>
+                        <textarea id="getLastBlockInfoTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/listBlocksForm" th:border="1" id="listBlocksForm">
+                        <label>hostIp：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUserPwd"/><br/>
+                        <label>blockIdentifiers：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="blockIdentifiers" placeholder="a comma-delimited list or array of block heights, hashes, height ranges (e.g. 100-200) or -n for the most recent n blocks"/><br/>
+                        <label>verbose：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="verbose"/><br/>
+                        <input type="submit" value="listBlocksForm" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div>
+                        <textarea id="listBlocksTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/getBlockHashForm" th:border="1" id="getBlockHashForm">
+                        <label>hostIp：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUserPwd"/><br/>
+                        <label>blockHeight：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="blockHeight"/><br/>
+                        <input type="submit" value="getBlockHashForm" style="color:green;font-weight: bold"><input type="reset" value="clean" style="color:red;font-weight: bold"><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div>
+                        <textarea id="getBlockHashTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+                <td valign="bottom" th:align="right">
+                    322222222222222222
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

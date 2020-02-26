@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Welcome to BaaSFrontConsle</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.form.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#getBlockchainParamsForm").ajaxForm(function(data){
+                $("#getBlockchainParamsTextarea").val(data)
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $("#getNetworkInfoForm").ajaxForm(function(data){
+                $("#getNetworkInfoTextarea").val(data)
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $("#getBlockChainNodeWalletAddressesForm").ajaxForm(function(data){
+                $("#getBlockChainNodeWalletAddressesTextarea").val(data)
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $("#getRuntimeParamsForm").ajaxForm(function(data){
+                $("#getRuntimeParamsTextarea").val(data)
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $("#getBlockChainInfoForm").ajaxForm(function(data){
+                $("#getBlockChainInfoTextarea").val(data)
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $("#getNewWalletAddressForm").ajaxForm(function(data){
+                $("#getNewWalletAddressTextarea").val(data)
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $("#getWalletInfoForm").ajaxForm(function(data){
+                $("#getWalletInfoTextarea").val(data)
+            });
+        });
+    </script>
+
+    <style>
+        table,table td,table th{border:1px solid #ff0000;border-collapse:collapse;}
+    </style>
+</head>
+<body>
+<div class="panel">
+    <h1 class="welcome">Welcome to Multichain Console</h1>
+    <div class="description">Here we provide you simple ways to create and manage your own Blockchain network for Multichain</div>
+    <div th:align="right">
+        <h2 th:align="center">Multichain blockchain info</h2>
+        <table style="table-layout:fixed;word-break:break-all" th:align="center">
+            <tbody>
+            <tr>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/getBlockchainParamsForm" th:border="1" id="getBlockchainParamsForm">
+                        <label>hostIp：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUserPwd"/><br/>
+                        <input type="submit" value="getBlockchainParams" style="color:green;font-weight: bold" ><input type="reset" value="clean" style="color:red;font-weight: bold" ><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div>
+                        <textarea id="getBlockchainParamsTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/getNetworkInfoForm" th:border="1" id="getNetworkInfoForm">
+                        <label>hostIp：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUserPwd"/><br/>
+                        <input type="submit" value="getNetworkInfo" style="color:green;font-weight: bold" ><input type="reset" value="clean" style="color:red;font-weight: bold" ><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div>
+                        <textarea id="getNetworkInfoTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/getBlockChainNodeWalletAddressesForm" th:border="1" id="getBlockChainNodeWalletAddressesForm">
+                        <label>hostIp：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUserPwd"/><br/>
+                        <input type="submit" value="getNodeWalletAddresses" style="color:green;font-weight: bold" ><input type="reset" value="clean" style="color:red;font-weight: bold" ><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div>
+                        <textarea id="getBlockChainNodeWalletAddressesTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/getRuntimeParamsForm" th:border="1" id="getRuntimeParamsForm">
+                        <label>hostIp：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUserPwd"/><br/>
+                        <input type="submit" value="getRuntimeParams" style="color:green;font-weight: bold" ><input type="reset" value="clean" style="color:red;font-weight: bold" ><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div>
+                        <textarea id="getRuntimeParamsTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/getBlockChainInfoForm" th:border="1" id="getBlockChainInfoForm">
+                        <label>hostIp：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUserPwd"/><br/>
+                        <input type="submit" value="getBlockChainInfo" style="color:green;font-weight: bold" ><input type="reset" value="clean" style="color:red;font-weight: bold" ><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div>
+                        <textarea id="getBlockChainInfoTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/getNewWalletAddressForm" th:border="1" id="getNewWalletAddressForm">
+                        <label>hostIp：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUserPwd"/><br/>
+                        <input type="submit" value="getNewWalletAddress" style="color:green;font-weight: bold" ><input type="reset" value="clean" style="color:red;font-weight: bold" ><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div>
+                        <textarea id="getNewWalletAddressTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td valign="bottom" th:align="right">
+                    <form method="post" action="http://localhost:7071/multichain/getWalletInfoForm" th:border="1" id="getWalletInfoForm">
+                        <label>hostIp：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="hostIp"/><br/>
+                        <label>rpcPort：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcPort"/><br/>
+                        <label>rpcUser：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUser"/><br/>
+                        <label>rpcUserPwd：</label>
+                        <input type="text" style="vertical-align: middle; text-align:center" name="rpcUserPwd"/><br/>
+                        <input type="submit" value="getWalletInfo" style="color:green;font-weight: bold" ><input type="reset" value="clean" style="color:red;font-weight: bold" ><button onclick="location.href='./index'" type="button" style="color:coral; font-style: oblique;font-weight: bold">return to index</button>
+                    </form>
+                    <div>
+                        <textarea id="getWalletInfoTextarea" rows="10" cols="50" style="resize:none; overflow: scroll"></textarea>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

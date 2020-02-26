@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Welcome to BaaSFrontConsle</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.form.min.js"></script>
+    <style>
+        table,table td,table th{border:1px solid #ff0000;border-collapse:collapse;}
+    </style>
+</head>
+<body>
+<div class="panel">
+    <h1 class="welcome">Welcome to Multichain Console</h1>
+    <div class="description">Here we provide you simple ways to create and manage your own Blockchain network for Multichain</div>
+    <table style="table-layout:fixed;word-break:break-all" th:align="center">
+        <tbody>
+        <tr>
+            <td valign="bottom" th:align="center">
+                <h2>Create multichain master node</h2>
+                <button onclick="location.href='./multichainMaster'" type="button" style="color:green;font-weight: bold">create master node</button>
+            </td>
+            <td valign="bottom" th:align="center">
+                <h2>Create multichain slave node</h2>
+                <button onclick="location.href='./multichainSlave'" type="button" style="color:red;font-weight: bold">create slave node</button>
+            </td>
+            <td valign="bottom" th:align="center">
+                <h2>Query Blockchain Info</h2>
+                <button onclick="location.href='./blockChainInfo'" type="button" style="color:red;font-weight: bold">Query multichain blockchain info</button>
+            </td>
+        </tr>
+        <tr>
+            <td valign="bottom" th:align="center">
+                <h2>Query Block Info</h2>
+                <button onclick="location.href='./queryBlockInfo'" type="button" style="color:red;font-weight: bold">query multichain block info</button>
+            </td>
+            <td valign="bottom" th:align="center">
+                <h2>Stream Administration</h2>
+                <button onclick="location.href='./multichainStream'" type="button" style="color:red;font-weight: bold">Stream Administration</button>
+            </td>
+            <td valign="bottom" th:align="center">
+                <h2>Asset Administration</h2>
+                <button onclick="location.href='./multichainAssetManagement'" type="button" style="color:red;font-weight: bold">Asset Administration</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="panel">
+    <h1 class="welcome">Welcome to Corda Console</h1>
+    <div class="description">Here we provide you simple ways to create and manage your own Blockchain network for corda</div>
+    <table style="table-layout:fixed;word-break:break-all" th:align="center">
+        <tbody>
+        <tr>
+            <td valign="bottom" th:align="center">
+                <h2>Create multichain master node</h2>
+                <button onclick="location.href='./multichainMaster'" type="button" style="color:green;font-weight: bold">create master node</button>
+            </td>
+            <td valign="bottom" th:align="center">
+                <h2>Create multichain slave node</h2>
+                <button onclick="location.href='./multichainSlave'" type="button" style="color:red;font-weight: bold">create slave node</button>
+            </td>
+            <td valign="bottom" th:align="center">
+                <h2>Query Blockchain Info</h2>
+                <button onclick="location.href='./blockChainInfo'" type="button" style="color:red;font-weight: bold">Query multichain blockchain info</button>
+            </td>
+        </tr>
+        <tr>
+            <td valign="bottom" th:align="center">
+                <h2>Query Block Info</h2>
+                <button onclick="location.href='./queryBlockInfo'" type="button" style="color:red;font-weight: bold">query multichain block info</button>
+            </td>
+            <td valign="bottom" th:align="center">
+                <h2>Stream Administration</h2>
+                <button onclick="location.href='./multichainStream'" type="button" style="color:red;font-weight: bold">Stream Administration</button>
+            </td>
+            <td valign="bottom" th:align="center">
+                <h2>Asset Administration</h2>
+                <button onclick="location.href='./multichainAssetManagement'" type="button" style="color:red;font-weight: bold">Asset Administration</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
