@@ -14,3 +14,19 @@
 2020-02-26 21:14:03.470 [http-nio-7071-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-02-26 21:14:03.470 [http-nio-7071-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2020-02-26 21:14:03.479 [http-nio-7071-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2020-02-26 21:38:33.818 [main] INFO  com.ml.baas.server.BaasFrontConsoleServer - Starting BaasFrontConsoleServer on LAPTOP-JRTFOK76 with PID 8712 (D:\ideaIU-2019.2.win-workspace\BaasFrontConsole\target\classes started by mengl in D:\ideaIU-2019.2.win-workspace\BaasFrontConsole)
+2020-02-26 21:38:33.822 [main] INFO  com.ml.baas.server.BaasFrontConsoleServer - The following profiles are active: dev
+2020-02-26 21:38:35.045 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 7071 (http)
+2020-02-26 21:38:35.057 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7071"]
+2020-02-26 21:38:35.057 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-02-26 21:38:35.058 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-26 21:38:35.211 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-02-26 21:38:35.212 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1341 ms
+2020-02-26 21:38:35.439 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-26 21:38:35.570 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-02-26 21:38:35.790 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7071"]
+2020-02-26 21:38:35.828 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 7071 (http) with context path ''
+2020-02-26 21:38:35.834 [main] INFO  com.ml.baas.server.BaasFrontConsoleServer - Started BaasFrontConsoleServer in 2.664 seconds (JVM running for 6.847)
+2020-02-26 21:40:19.015 [http-nio-7071-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-26 21:40:19.015 [http-nio-7071-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-02-26 21:40:19.022 [http-nio-7071-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms

@@ -9,5 +9,19 @@ This is the demo web console for MLBaaSPlatfrom
 
 ![avatar](img/preview.png)
 
+### How to use
+##### 1: make sure you have you kubernetes env running
+##### 2: make sure you have the kubernetes client start up and running on default port 8081 [don't forget to replace the actual kubernetes configuration content into the file kubectl.kubeconfig under resources folder]
+##### 3: start up BaaSFrontConsole project and make sure it's running on default port 7071
+##### 4: click "create master node" and give the configuration as below
+![avatar](img/create-master-node.png)
+##### 5: after the master node created successfully then move on to create the slave node
+##### 6: return to index page and click on "create slave node" and give the configuration as below to create the first slave node
+![avatar](img/create-slave-citi.png)
+##### 7: return to index page and click on "create slave node" and give the configuration as below to create the second slave node
+![avatar](img/create-slave-ubs.png)
+##### 8: then you have the 3-nodes multichain network setup and running if everything goes well
+##### 9: here you can use the web console to operate the multichain network
+
 ### Support or Contact
 > If you have question please contact me via menglong567@aliyun.com
