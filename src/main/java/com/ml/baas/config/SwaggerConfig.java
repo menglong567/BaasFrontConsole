@@ -24,7 +24,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Multichain-client API Doc")
+                .title("Multichain & Corda API Doc")
                 .description("This is a restful api document of BaasFrontConsole server.")
                 .version("1.0")
                 .build();

@@ -1,4 +1,4 @@
 package com.ml.baas.controller.corda;
 
-public class CordaController {
+public class CordaNodeController {
 }
